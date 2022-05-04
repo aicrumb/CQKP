@@ -9,13 +9,12 @@ I built this so I can have a sort of automatic retrieval method for finding the 
 you can do something like this or you could use git clone to grab it
 
 ```bash
-wget https://raw.githubusercontent.com/aicrumb/CQKP/master/cqkp.py
+pip install git+https://github.com/aicrumb/CQKP
 ```
 
-requirements (omit: pytorch, because setup for pytorch is different for every circumstance):
-```bash
-pip install transformers wandb
-```
+it requires pytorch, transformers, and wandb
+
+
 
 ### Use
 
