@@ -49,7 +49,7 @@ model.best_question(questions,answer)[0]
 # what nuts can birds eat?
 ```
 
-
+both of those commands (best_answer, best_question) return the best match, the index of the best match in the list you gave it, and the score all in a tuple
 
 for training:
 
