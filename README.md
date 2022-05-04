@@ -5,6 +5,7 @@
 I built this so I can have a sort of automatic retrieval method for finding the best article for a question, but it can be used both ways if you're into that?
 
 to note, this work best when the "answers" are full paragraphs or even multiple paragraphs, but may also work with short form answers as a benefit that was unintended
+(open examples in a ready to go colab notebook here [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aicrumb/CQKP/blob/master/CQKP_Example.ipynb) )
 
 ### Setup
 
@@ -46,7 +47,6 @@ model.best_question(questions,answer)[0]
 # expected output:
 # what nuts can birds eat?
 ```
-(you can open this code in Google Colab, a free gpu enabled runtime here: [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aicrumb/CQKP/blob/master/CQKP_Example.ipynb) )
 
 both best_question and best_answer have the option "return_index" which you can set to true, and "return_score" which you can set to true
 (they will be set to [1] and [2] respectively, as the best result is [0])
