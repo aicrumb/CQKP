@@ -1,3 +1,4 @@
+
 import wandb
 import torch
 import torch.nn as nn
@@ -107,9 +108,9 @@ def cross_entropy(preds, targets, reduction='none'):
     elif reduction == "mean":
         return loss.mean()
 
-def load_model(path="SQuAD_CQKP.pt",device='cpu',download=False):
+def load_model(path="SQuAD_CQKP.pt",device='cuda',download=False):
     if download:
         wandb.restore('SQuAD_CQKP.pt', run_path="boopysaur/CQKP/1nfqx9u0")
     model = CKQP_Model().to(device)
-    model.load_state_dict(torch.load(path),map_location=device)
+    model.load_state_dict(torch.load(path))
     return model.eval()
