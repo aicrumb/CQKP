@@ -14,5 +14,5 @@ setuptools.setup(
     },
     license='GNU GPLv3',
     packages=['cqkp'],
-    install_requires=['wandb', 'transformers', 'pytorch'],
+    install_requires=['wandb', 'transformers'],
 )
