@@ -99,6 +99,7 @@ class CKQP_Model(nn.Module):
             result.append(ind)
         if return_score:
             result.append(max(scores))
+        return tuple(result)
     def best_question(self, questions, answer, return_index=False, return_score=False):
         q_tok = self.tokenize(questions)
         a_tok = self.tokenize([answer])
