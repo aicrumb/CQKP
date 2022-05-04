@@ -122,11 +122,18 @@ def cross_entropy(preds, targets, reduction='none'):
     elif reduction == "mean":
         return loss.mean()
 
-def load_model(path="SQuAD_CQKP.pt",device='cpu'):
+import os
+models = {
+    "harold": "boopysaur/CQKP/1nfqx9u0",
+    "janice": "boopysaur/CQKP/4vxqh9ne"
+}
+def load_model(model="harold",device='cpu'):
     import os
+    fname = model+".pt"
     files = [f for f in os.listdir('.') if os.path.isfile(f)]
-    if "SQuAD_CQKP.pt" not in files:
-        wandb.restore('SQuAD_CQKP.pt', run_path="boopysaur/CQKP/1nfqx9u0")
+    if fname not in files:
+        wandb.restore('SQuAD_CQKP.pt', run_path=models[model])
+        os.rename("SQuAD_CQKP.pt", fname)
     model = CKQP_Model().to(device)
-    model.load_state_dict(torch.load(path, map_location=device))
+    model.load_state_dict(torch.load(fname, map_location=device))
     return model.eval()
