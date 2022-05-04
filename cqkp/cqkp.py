@@ -108,7 +108,7 @@ def cross_entropy(preds, targets, reduction='none'):
     elif reduction == "mean":
         return loss.mean()
 
-def load_model(path="SQuAD_CQKP.pt",device='cuda'):
+def load_model(path="SQuAD_CQKP.pt",device='cpu'):
     import os
     files = [f for f in os.listdir('.') if os.path.isfile(f)]
     if "SQuAD_CQKP.pt" not in files:
