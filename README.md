@@ -4,23 +4,20 @@
 
 I built this so I can have a sort of automatic retrieval method for finding the best article for a question, but it can be used both ways if you're into that?
 
-### "setup"
+### Setup
 
-you can do something like 
+you can do something like this or you could use git clone to grab it
 
 ```bash
 wget https://raw.githubusercontent.com/aicrumb/CQKP/master/cqkp.py
 ```
 
-or just any way to get the script
-
-and requirements (omit: pytorch, because setup for pytorch is different for every circumstance):
-
+requirements (omit: pytorch, because setup for pytorch is different for every circumstance):
 ```bash
 pip install transformers wandb
 ```
 
-### use
+### Use
 
 picking the best article from a question
 
