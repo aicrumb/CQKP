@@ -22,7 +22,7 @@ picking the best article from a question
 
 ```python
 import cqkp
-model = cqkp.load_model(download=True) # you'll have to sign into wandb the first time
+model = cqkp.load_model() # you'll have to sign into wandb the first time
 articles = [
     "Birds can eat all nuts other than the usual peanuts",
     "Birds are a group of warm-blooded vertebrates constituting the class Aves",
