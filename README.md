@@ -44,6 +44,7 @@ model.best_question(questions,answer)[0]
 # expected output:
 # what nuts can birds eat?
 ```
+(you can open this code in Google Colab, a free gpu enabled runtime here: [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aicrumb/CQKP/blob/master/CQKP_Example.ipynb) )
 
 both of those commands (best_answer, best_question) return the best match, the index of the best match in the list you gave it, and the score all in a tuple
 
