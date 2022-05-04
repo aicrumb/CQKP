@@ -86,20 +86,33 @@ class CKQP_Model(nn.Module):
         question_embeddings = self.question_projection(question_features)
         text_embeddings = self.text_projection(text_features)
         return question_embeddings, text_embeddings
-    def best_answer(self, question, answers):
+    def best_answer(self, question, answers, return_index=False, return_score=False):
         q_tok = self.tokenize([question])
         a_tok = self.tokenize(answers)
         scores = self.score(q_tok,a_tok)
         scores = [torch.nn.functional.cosine_similarity(scores[0], scores[1][i]).item() for i in range(len(scores[1]))]
         ind = scores.index(max(scores))
-        return (answers[ind], ind, max(scores))
-    def best_question(self, questions, answer):
+        # return (answers[ind], ind, max(scores))
+
+        result = [answers[ind]]
+        if return_index:
+            result.append(ind)
+        if return_score:
+            result.append(max(scores))
+    def best_question(self, questions, answer, return_index=False, return_score=False):
         q_tok = self.tokenize(questions)
         a_tok = self.tokenize([answer])
         scores = self.score(q_tok,a_tok)
         scores = [torch.nn.functional.cosine_similarity(scores[0][i], scores[1]).item() for i in range(len(scores[0]))]
         ind = scores.index(max(scores))
-        return (questions[ind], ind, max(scores))
+        # return (questions[ind], ind, max(scores))
+
+        result = [questions[ind]]
+        if return_index:
+            result.append(ind)
+        if return_score:
+            result.append(max(scores))
+        return tuple(result)
 def cross_entropy(preds, targets, reduction='none'):
     log_softmax = nn.LogSoftmax(dim=-1)
     loss = (-targets * log_softmax(preds)).sum(1)
