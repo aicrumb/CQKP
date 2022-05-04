@@ -5,6 +5,7 @@
 I built this so I can have a sort of automatic retrieval method for finding the best article for a question, but it can be used both ways if you're into that?
 
 to note, this work best when the "answers" are full paragraphs or even multiple paragraphs, but may also work with short form answers as a benefit that was unintended
+
 (open examples in a ready to go colab notebook here [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aicrumb/CQKP/blob/master/CQKP_Example.ipynb) )
 
 ### Setup
