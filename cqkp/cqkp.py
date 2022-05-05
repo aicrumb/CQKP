@@ -125,7 +125,6 @@ def cross_entropy(preds, targets, reduction='none'):
 import os
 models = {
     "harold": "boopysaur/CQKP/1nfqx9u0",
-    "janice": "boopysaur/CQKP/4vxqh9ne"
 }
 def load_model(model="harold",device='cpu'):
     import os
